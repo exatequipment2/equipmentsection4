@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+<SCRIPT TYPE="text/javascript">  
+<!--  
+//สคริปห้ามคลิ้กขวา By www.phpthai.com  
+  
+var message="ห้ามคลิ้กขวานะจ๊ะ";  
+  
+function clickIE() {if (document.all) {(message);return false;}}  
+function clickNS(e) {if  
+(document.layers||(document.getElementById&&!document.all)) {  
+if (e.which==2||e.which==3) {(message);return false;}}}  
+if (document.layers)  
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}  
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}  
+document.oncontextmenu=new Function("return false")  
+// -->  
+</SCRIPT> 
+
+<script language="javascript">
+function IsNumeric(sText,obj)
+{
+    var ValidChars = "0123456789.";
+   var IsNumber=true;
+   var Char;
+   for (i = 0; i < sText.length && IsNumber == true; i++) 
+      { 
+      Char = sText.charAt(i); 
+      if (ValidChars.indexOf(Char) == -1) 
+         {
+         IsNumber = false;
+         }
+      }
+        if(IsNumber==false){
+            alert("กรอกตัวเลขเท่านั้น");
+            obj.value=sText.substr(0,sText.length-1);
+        }
+   }
+</script>
+
+<script language="javascript">
+function fncCal1()
+{
+	document.getElementById("data3").value = parseInt(document.getElementById("data4").value) + parseInt(document.getElementById("data5").value)
+}
+</script>
+
+
+<script language="javascript">
+function fncCal2()
+{
+	document.getElementById("data10").value = parseInt(document.getElementById("data11").value) + parseInt(document.getElementById("data12").value)
+}
+</script>
+
+
+<script language="javascript">
+function fncCal3()
+{
+	document.getElementById("data17").value = parseInt(document.getElementById("data18").value) + parseInt(document.getElementById("data19").value)
+}
+</script>
+
+
+<script language="javascript">
+function fncCal4()
+{
+	document.getElementById("data24").value = parseInt(document.getElementById("data25").value) + parseInt(document.getElementById("data26").value)
+}
+</script>
+
+<script language="javascript">
+function fncCal5()
+{
+	document.getElementById("data31").value = parseInt(document.getElementById("data32").value) + parseInt(document.getElementById("data33").value)
+}
+</script>
+
+<script language="javascript">
+function fncCalPer1()
+{
+	document.getElementById("data6").value = (parseInt(document.getElementById("data5").value) / parseInt(document.getElementById("data3").value))*100
+}
+</script>
+
+
+<script language="javascript">
+function fncCalPer2()
+{
+	document.getElementById("data13").value = (parseInt(document.getElementById("data12").value) / parseInt(document.getElementById("data10").value))*100
+}
+</script>
+
+<script language="javascript">
+function fncCalPer3()
+{
+	document.getElementById("data20").value = (parseInt(document.getElementById("data19").value) / parseInt(document.getElementById("data17").value))*100
+}
+</script>
+<script language="javascript">
+function fncCalPer4()
+{
+	document.getElementById("data27").value = (parseInt(document.getElementById("data26").value) / parseInt(document.getElementById("data24").value))*100
+}
+</script>
+
+<script language="javascript">
+function fncCalPer5()
+{
+	document.getElementById("data34").value = (parseInt(document.getElementById("data33").value) / parseInt(document.getElementById("data31").value))*100
+}
+</script>
+
+	
+
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+  
+//url web
+  var script_url = "https://script.google.com/macros/s/AKfycbwV8qB6EopWG9KJuRE6-obNV5MRVNvRJrRDM7Mx3E6iDbPYBz5Cdts9pA/exec";
+  
+//เพิ่มข้อมูล
+  function insert_value() {
+    
+	$("#re").css("visibility","hidden");
+	 document.getElementById("loader").style.visibility = "visible";
+	$('#mySpinner').addClass('spinner');
+
+    var reportdate1= $("#reportdate").val();
+	var userPfFullName= $("#userPfFullName").val();
+	var data1= $("#data1").val();
+	var data2= $("#data2").val();
+	var data3= $("#data3").val();
+	var data4= $("#data4").val();
+	var data5= $("#data5").val();
+	var data6= $("#data6").val();
+	var data7= $("#data7").val();
+    var url = script_url+"?callback=ctrlq&data7="+data7+"&data6="+data6+"&data5="+data5+"&data4="+data4+"&data3="+data3+"&data2="+data2+"&data1="+data1+"&userPfFullName="+userPfFullName+"&reportdate="+reportdate1+"&action=insert";
+  
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+  }
+//อัปเดทข้อมูล
+  function update_value(){
+	$("#re").css("visibility","hidden");
+     document.getElementById("loader").style.visibility = "visible";
+	
+    var reportdate1= $("#reportdate").val();
+	var userPfFullName= $("#userPfFullName").val();
+    var nickname= $("#nickname").val();
+	var data1= $("#data1").val();
+	var data2= $("#data2").val();
+	var data3= $("#data3").val();
+	var data4= $("#data4").val();
+	var data5= $("#data5").val();
+	var data6= $("#data6").val();
+	var data7= $("#data7").val();
+    var url = script_url+"?callback=ctrlq&data7="+data7+"&data6="+data6+"&data5="+data5+"&data4="+data4+"&data3="+data3+"&data2="+data2+"&data1="+data1+"&userPfFullName="+userPfFullName+"&reportdate="+reportdate1+"&action=update";
+ 
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+  }
+
+//ลบข้อมูล
+  function delete_value(){
+	$("#re").css("visibility","hidden");
+     document.getElementById("loader").style.visibility = "visible";
+	 
+	$('#mySpinner').addClass('spinner');
+    var reportdate1= $("#reportdate").val();
+	var userPfFullName= $("#userPfFullName").val();
+    var nickname= $("#nickname").val();
+	var data1= $("#data1").val();
+	var data2= $("#data2").val();
+	var data3= $("#data3").val();
+	var data4= $("#data4").val();
+	var data5= $("#data5").val();
+	var data6= $("#data6").val();
+    var url = script_url+"?callback=ctrlq&data7="+data7+"&data6="+data6+"&data5="+data5+"&data4="+data4+"&data3="+data3+"&data2="+data2+"&data1="+data1+"&userPfFullName="+userPfFullName+"&reportdate="+reportdate1+"&action=delete";
+
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+  }
+
+  // print the returned data
+  function ctrlq(e) {
+	$("#re").html(e.result);
+	$("#re").css("visibility","visible");
+	read_value();
+  }
+  
+function read_value() {
+
+    $("#re").css("visibility","hidden");
+    document.getElementById("loader").style.visibility = "visible";
+    var url = script_url+"?action=read";
+
+    $.getJSON(url, function (json) {
+    // สร้างตารางแสดงข้อมูล
+        var table = document.createElement("table");
+        var header = table.createTHead();
+		var row = header.insertRow(0);     
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		var cell4 = row.insertCell(3);
+		var cell5 = row.insertCell(4);
+		var cell6 = row.insertCell(5);
+		var cell7 = row.insertCell(6);
+		var cell8 = row.insertCell(7);
+		var cell9 = row.insertCell(8);
+		row.style.background = "rgb(243,219,113)";
+	
+		cell1.innerHTML = "<b>วันที่รายงาน</b>";
+		cell2.innerHTML = "<b>ชื่อ</b>";
+		cell3.innerHTML = "<b>LANE</b>";
+		cell4.innerHTML = "<b>TYPE</b>";
+		cell5.innerHTML = "<b>Sumary tranaction</b>";
+		cell6.innerHTML = "<b>Normal tranaction</b>";
+		cell7.innerHTML = "<b>Portable</b>";
+		cell8.innerHTML = "<b>%Error</b>";
+		cell9.innerHTML = "<b>note</b>";
+        
+        //นำข้อมูลลงในตาราง
+        for (var i = 0; i < json.records.length; i++) {
+            tr = table.insertRow(-1);
+				var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = json.records[i].ReportDate;
+				tabCell = tr.insertCell(-1);
+				tabCell.innerHTML = json.records[i].ReportUser;
+				tabCell = tr.insertCell(-1);
+				tabCell.innerHTML = json.records[i].LANE;
+				tabCell = tr.insertCell(-1);
+				tabCell.innerHTML = json.records[i].TYPE;
+				tabCell.innerHTML = json.records[i].Sumary tranaction;
+				tabCell.innerHTML = json.records[i].Normal tranaction;
+				tabCell.innerHTML = json.records[i].Portable;
+				tabCell.innerHTML = json.records[i].%Error;
+				tabCell.innerHTML = json.records[i].note;
+            }
+
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+        document.getElementById("loader").style.visibility = "hidden";
+	$("#re").css("visibility","visible");
+	
+        $("#ReportDate").val("")
+	    $("#ReportUser").val("")
+		$("#LANE").val("")
+		$("#TYPE").val("")
+		$("#Sumary tranaction").val("")
+		$("#Normal tranaction").val("")
+		$("#Portable").val("")
+		$("#%Error").val("")
+		$("#note").val("")
+    });
+	}
+  </script>
+
+	
+	
+	
+	
+
+</head>
+  <body>
+<center>
+  <a href="./Welcome.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-line-chart fa-fw"></i>กลับไปหน้าหลัก</a>
+  <div class="w3-container w3-light-grey">	
+  <h2 style="text-shadow:1px 1px 0 #444"> รายงานประสิทธิภาพช่องเก็บค่าผ่านทางอัตโนมัติ (ETC) ประจำวัน <h2>
+  </div>	  
+</center>
+<center>
+   <div class="w3-container w3-light-grey">
+   <h2 style="text-shadow:1px 1px 0 #444">ทางพิเศษกาญจนาภิเษก(บางพลี-สุขสวัสดิ์) ด่าน บางเมือง<h2>
+   </div>
+</center>
+
+ <div class="col-12 col-12 mb-4 text-center">
+	<span class="h3">ผู้รายงาน:</span>
+	<span class="h3" id="userPfFullName">Name</span>
+	<span class="h3" id="userPfSurname">surname</span>
+</div>
+
+<!--<form action="/action_page.php">-->
+  <label for="reportdate">เลือกวันที่รายงาน:</label>
+  <input type="date" id="reportdate" name="reportdate">
+<!--
+  <input type="submit">
+</form>
+-->
+
+<center>
+<table width="70%" border="1">
+  <tbody>
+    <tr>
+      <th scope="col">LANE&nbsp;</th>
+      <th scope="col">TYPE&nbsp;</th>
+      <th scope="col">การผ่านทางรวม&nbsp;</th>
+      <th scope="col">&nbsp;การผ่านทางปกติ</th>
+      <th scope="col">&nbsp;Portable</th>
+	    <th scope="col">%Error&nbsp;</th>
+      <th scope="col">หมายเหตุ&nbsp;</th>
+    </tr>
+
+    <tr> 
+
+      <td scope="col"><input type = "text" id="data1" value= "KBM1-N1-EE04" readonly></td>
+      <td scope="col"><input type = "text" id="data2" value= "ENTRY"readonly ></td>
+      <td scope="col"><input type = "text" id="data3" readonly ></td>
+	    <td scope="col"><input type = "text" id="data4" onKeyUp="IsNumeric(this.value,this)"></td>
+	    <td scope="col"><input type = "text" id="data5" onKeyUp="fncCal1()"></td>
+      <td scope="col"><input type = "text" id="data6" onKeyUp="fncCalPer1()"></td>
+      <td scope="col"><input type = "text" id="data7"></td>
+	    <td id="btn1"><button id="btn1"> บันทึกข้อมูล </button></td>
+	</tr>
+
+    <tr>
+      <td scope="col"><input type = "text" id="data8" value= "KBM2-N2-EE04" readonly ></td>
+      <td scope="col"><input type = "text" id="data9" value= "ENTRY" readonly></td>
+      <td scope="col"><input type = "text" id="data10" readonly ></td>
+	    <td scope="col"><input type = "text" id="data11" onKeyUp="IsNumeric(this.value,this)"></td>
+	    <td scope="col"><input type = "text" id="data12" onKeyUp="fncCal2()"></td>
+      <td scope="col"><input type = "text" id="data13" onKeyUp="fncCalPer2()"></td>
+      <td scope="col"><input type = "text" id="data14"></td>
+	    <td id="btn2"><button id="btn2"> บันทึกข้อมูล </button></td>
+    </tr>
+
+    <tr>
+      <td scope="col"><input type = "text" id="data15" value= "KBM2-X3-EX03" readonly ></td>
+      <td scope="col"><input type = "text" id="data16" value= "EXIT"readonly ></td>
+      <td scope="col"><input type = "text" id="data17" readonly ></td>
+	    <td scope="col"><input type = "text" id="data18" onKeyUp="IsNumeric(this.value,this)"></td>
+	    <td scope="col"><input type = "text" id="data19" onKeyUp="fncCal3()"></td>
+      <td scope="col"><input type = "text" id="data20" onKeyUp="fncCalPer3()"></td>
+      <td scope="col"><input type = "text" id="data21"></td>
+	    <td id="btn3"><button id="btn3"> บันทึกข้อมูล </button></td>
+    </tr>
+
+    <tr>
+      <td scope="col"><input type = "text" id="data22" value= "KBM3-X1-EX03" readonly></td>
+      <td scope="col"><input type = "text" id="data23" value= "EXIT" readonly></td>
+      <td scope="col"><input type = "text" id="data24" readonly ></td>
+	    <td scope="col"><input type = "text" id="data25" onKeyUp="IsNumeric(this.value,this)"></td>
+	    <td scope="col"><input type = "text" id="data26" onKeyUp="fncCal4()"></td>
+      <td scope="col"><input type = "text" id="data27" onKeyUp="fncCalPer4()"></td>
+      <td scope="col"><input type = "text" id="data28"></td>
+	    <td id="btn4"><button id="btn4"> บันทึกข้อมูล </button></td>
+    </tr>
+
+    <tr>
+      <td scope="col"><input type = "text" id="data29" value= "KBM4-X2-EX03" readonly></td>
+      <td scope="col"><input type = "text" id="data30" value= "EXIT" readonly></td>
+      <td scope="col"><input type = "text" id="data31" readonly ></td>
+	    <td scope="col"><input type = "text" id="data32" onKeyUp="IsNumeric(this.value,this)"></td>
+	    <td scope="col"><input type = "text" id="data33" onKeyUp="fncCal5()"></td>
+      <td scope="col"><input type = "text" id="data34" onKeyUp="fncCalPer5()"></td>
+      <td scope="col"><input type = "text" id="data35"></td>
+	    <td id="btn5"><button id="btn5"> บันทึกข้อมูล </button></td>
+    </tr>
+
+  </tbody>
+</table>
+	
+	
+	
+<input type = "button" style="font-size:12pt;color:white;background-color:#F76326;border:1px solid #000000;padding:2px"  
+id = "b1" onClick="insert_value()" value = "เพิ่มข้อมูล" ></input>
+<input type="button" style="font-size:12pt;color:white;background-color:#6DA551;border:1px solid #000000;padding:2px" 
+onclick="read_value()" value="แสดงข้อมูล" />
+<input type="button" style="font-size:12pt;color:white;background-color:#0298F7;border:1px solid #000000;padding:2px" 
+onclick="update_value()" value="อัปเดทข้อมูล" />
+<input type="button" style="font-size:12pt;color:white;background-color:#975AE0;border:1px solid #000000;padding:2px" 
+onclick="delete_value()" value="ลบข้อมูล" />
+
+<br><br>
+//url sheet
+<a href="https://docs.google.com/spreadsheets/d/1VnhXltilUANtV8pc8OEOKu1mhT9AfD51C-drHtYXLqg/edit?usp=sharing" target="_blank">ดูข้อมูลในชีต</a>
+<div id="showData"></div>
+	   
+	   
+	   
+</center>
+ 
+<!--
+      <script>
+        document.getElementById("btn1").addEventListener("click", saveData);
+
+        function saveData(){
+        var data = {}  
+      data.data1 = document.getElementById("data1") .value;
+      data.data2 = document.getElementById("data2") .value;
+      data.data3 = document.getElementById("data3") .value;
+			data.data4 = document.getElementById("data4") .value;
+      data.data5 = document.getElementById("data5") .value;
+			data.data6 = document.getElementById("data6") .value;
+      data.data7 = document.getElementById("data7") .value;
+      
+        google.script.run.userClicked(data);
+        document.getElementById("data1") .value;
+        document.getElementById("data2") .value;
+        document.getElementById("data3") .value="";
+        document.getElementById("data4") .value="";
+        document.getElementById("data5") .value="";
+		    document.getElementById("data6") .value="";
+        document.getElementById("data7") .value="";
+        }
+      </script>
+
+      <script>
+        document.getElementById("btn2").addEventListener("click", saveData);
+
+        function saveData(){
+        var data = {}  
+      data.data1 = document.getElementById("data8") .value;
+      data.data2 = document.getElementById("data9") .value;
+      data.data3 = document.getElementById("data10") .value;
+			data.data4 = document.getElementById("data11") .value;
+			data.data5 = document.getElementById("data12") .value;
+      data.data6 = document.getElementById("data13") .value;
+      data.data7 = document.getElementById("data14") .value;
+
+        google.script.run.userClicked(data);
+        document.getElementById("data8") .value;
+        document.getElementById("data9") .value;
+        document.getElementById("data10") .value="";
+        document.getElementById("data11") .value="";
+		    document.getElementById("data12") .value="";
+        document.getElementById("data13") .value="";
+        document.getElementById("data14") .value="";
+        }
+      </script>
+
+      <script>
+        document.getElementById("btn3").addEventListener("click", saveData);
+
+        function saveData(){
+        var data = {}  
+      data.data1 = document.getElementById("data15") .value;
+      data.data2 = document.getElementById("data16") .value;
+      data.data3 = document.getElementById("data17") .value;
+			data.data4 = document.getElementById("data18") .value;
+      data.data5 = document.getElementById("data19") .value;
+			data.data6 = document.getElementById("data20") .value;
+      data.data7 = document.getElementById("data21") .value;
+
+        google.script.run.userClicked(data);
+        document.getElementById("data15") .value;
+        document.getElementById("data16") .value;
+        document.getElementById("data17") .value="";
+        document.getElementById("data18") .value="";
+		    document.getElementById("data19") .value="";
+        document.getElementById("data20") .value="";
+        document.getElementById("data21") .value="";
+        }
+      </script>
+
+      <script>
+        document.getElementById("btn4").addEventListener("click", saveData);
+
+        function saveData(){
+        var data = {}  
+      data.data1 = document.getElementById("data22") .value;
+      data.data2 = document.getElementById("data23") .value;
+      data.data3 = document.getElementById("data24") .value;
+      data.data4 = document.getElementById("data25") .value;
+      data.data5 = document.getElementById("data26") .value;
+			data.data6 = document.getElementById("data27") .value;
+      data.data7 = document.getElementById("data28") .value;
+
+        google.script.run.userClicked(data);
+        document.getElementById("data22") .value;
+        document.getElementById("data23") .value;
+        document.getElementById("data24") .value="";
+        document.getElementById("data25") .value="";
+		    document.getElementById("data26") .value="";
+        document.getElementById("data27") .value="";
+        document.getElementById("data28") .value="";
+        }
+      </script>
+
+      <script>
+        document.getElementById("btn5").addEventListener("click", saveData);
+
+        function saveData(){
+        var data = {}  
+      data.data1 = document.getElementById("data29") .value;
+      data.data2 = document.getElementById("data30") .value;
+      data.data3 = document.getElementById("data31") .value;
+			data.data4 = document.getElementById("data32") .value;
+      data.data5 = document.getElementById("data33") .value;
+			data.data6 = document.getElementById("data34") .value;
+      data.data7 = document.getElementById("data35") .value;
+
+        google.script.run.userClicked(data);
+        document.getElementById("data29") .value;
+        document.getElementById("data30") .value;
+        document.getElementById("data31") .value="";
+        document.getElementById("data32") .value="";
+		    document.getElementById("data33") .value="";
+        document.getElementById("data34") .value="";
+        document.getElementById("data35") .value="";
+        }
+      </script>
+-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+   <!-- Firebase -->
+    
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+	apiKey: "AIzaSyC2HgriocCELYqFHqelFORL07hKDjCziKk",
+    authDomain: "equipment2auth.firebaseapp.com",
+    databaseURL: "https://equipment2auth-default-rtdb.firebaseio.com",
+    projectId: "equipment2auth",
+    storageBucket: "equipment2auth.appspot.com",
+    messagingSenderId: "566374600983"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/app.js"></script>
+
+  </body>
+</html>

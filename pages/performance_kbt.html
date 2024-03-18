@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Save Web Form Data to Spreadsheets - Contact Form</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/641/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
+</script>
+</head>
+<body>
+  <form id="myForm">
+   <table width="90%" border="1">
+  <tbody>
+    <tr>
+      <th scope="col">Lane&nbsp;</th>
+      <th scope="col">การผ่านทางปกติ&nbsp;</th>
+      <th scope="col">ผ่านทางโดย Portable&nbsp;</th>
+      <th scope="col">หมายเหตุ&nbsp;</th>
+	</tr>
+    <tr>
+      <td><input type = "text" id="Lane" value= "KBT1-N1-EE03" readonly></td>
+      <td>&nbsp;<input name="norm_tran" /></td>
+      <td>&nbsp;<input name="potable" /></td>
+      <td>&nbsp;<input name="note" /></td>
+	  <button onclick="SubForm()">Submit</button>
+    </tr>
+    <tr>
+	  <td><input type = "text" id="Lane" value= "KBT1-N1-EE04" readonly></td>
+      <td>&nbsp;<input name="norm_tran" /></td>
+      <td>&nbsp;<input name="potable" /></td>
+      <td>&nbsp;<input name="note" /></td>
+	  <button onclick="SubForm()">Submit</button>
+    </tr>
+	<tr>
+  	  <td><input type = "text" id="Lane" value= "KBT1-N2-EE06" readonly></td>
+      <td>&nbsp;<input name="norm_tran" /></td>
+      <td>&nbsp;<input name="potable" /></td>
+      <td>&nbsp;<input name="note" /></td>
+	  <button onclick="SubForm()">Submit</button>
+    </tr>
+  </tbody>
+</table>
+
+  </form>
+<!--  <button onclick="SubForm()">Submit</button>-->
+</body>
+</html>
