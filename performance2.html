@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Save Web Form Data to Spreadsheets</title>
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/8460/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					alert("Form Data Submitted :)")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<table width="90%" border="1">
+  <tbody>
+    <tr>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">&nbsp;</th>
+    </tr>
+    <tr>
+      <th <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name"></th>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+	<form id="myForm">
+		<label>timestamp</label>
+		<input name="timestamp" />
+		<br/>
+		<label>date</label>
+		<input name="date" />
+		<br/>
+		<label>LANE</label>
+		<input name="LANE" />
+		<br/>
+		<label>total</label>
+		<input name="total" />
+		<br/>
+		<label>normal</label>
+		<input name="normal" />
+		<br/>
+		<label>portable</label>
+		<input name="portable" />
+		<br/>
+		<label>%error</label>
+		<input name="%error" />
+		<br/>
+		<label>note</label>
+		<input name="note" />
+		<br/>
+		<label>reporter</label>
+		<input name="reporter" />
+		<br/>
+	</form>
+	<button onclick='SubForm()'>Submit</button>
+</body>
+</html>
