@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "equipment2auth"
+  },
+  "targets": {
+    "equipment2auth": {
+      "hosting": {
+        "target-name": [
+          "resource-name"
+        ]
+      }
+    }
+  }
+}

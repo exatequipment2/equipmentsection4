@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.1",
+    "googleapis": "^67.0.0"
+  }
+}
