@@ -1,77 +1,195 @@
+
 <!DOCTYPE html>
 <html>
-<head>
+<title> Equipment2 Report</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
-}
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 15%;
-  padding: 20px;
-}
-
-#myBtn {
-  width: 100px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
-</head>
-<body>
+<body class="w3-light-grey">
 
-<video autoplay id="myVideo">
-  <source src="./images/main.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">EXAT Equipment2 Report</span>
+</div>
 
-<div class="content">
-<p>เข้าหน้า login: <a href="index2.html"><strong class="text-primary text-uppercase showreForm">login</strong></a></p>
-<p>สถานะระบบ : <a href="https://datastudio.google.com/u/0/reporting/fc5e866b-596d-4ad1-98aa-36f647eb8b06/page/p_7cy4a8alpc"><strong class="text-primary text-uppercase showreForm">DashBoard</strong></a></p>  <button id="myBtn" onclick="myFunction()">Pause</button>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="../images/exat.png" class="w3-circle w3-margin-right" style="width:46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>
+	<div class="w3-col s8 w3-bar">
+	  <span class="h3" id="userPfFullName">Name</span>
+	</div>
+	<div class="w3-col s8 w3-bar">
+	  <span class="h3" id="userPfSurname">surname</span></strong></span><br>
+	</div>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+	  
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">รายงาน สถานะ EMV ประจำวันทำการ
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="https://forms.gle/3sQQVjXPG7eyemDj6" target="_blank" class="w3-bar-item w3-button">กลุ่มด่านบางแก้ว</a>
+      <a href="https://forms.gle/pQjaE1WESzGChbdh7" target="_blank" class="w3-bar-item w3-button">กลุ่มด่านเทพารักษ์</a>
+	  <a href="https://forms.gle/nfW2HuhBSCnUcVn99" target="_blank" class="w3-bar-item w3-button">กลุ่มด่านบางเมือง</a>
+	  <a href="https://forms.gle/aa68HXAo2yxVBqRa6" target="_blank" class="w3-bar-item w3-button">กลุ่มด่านปู่เจ้าสมิงพราย+ปากน้ำ</a>
+	  <a href="https://forms.gle/iRDyBsYyRwwuMGg36" target="_blank" class="w3-bar-item w3-button">กลุ่มด่านบางครุ</a>
+	  <a href="https://forms.gle/ttFYE8Le1WiZTywZ6" target="_blank" class="w3-bar-item w3-button">กลุ่มด่านบางขุนเทียน</a>
+	  <a href="https://datastudio.google.com/u/1/reporting/fc5e866b-596d-4ad1-98aa-36f647eb8b06/page/htI1B" target="_blank" class="w3-bar-item w3-button">รอ 15 นาที เพื่อเข้าไปดูสถานะ EMV Check List</a>
+    </div>
+  </div> 
+	  
+  <div class="w3-dropdown-hover">
+    <button class="w3-button">รายงานประสิทธิภาพช่อง ETC (ประจำวัน)
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="https://script.google.com/macros/s/AKfycby5RK2yGGuJCBPppBor0F4r_MpWg6r3OVXjVQjXJKcIAv6RSSkzZ_OXkfJLr8IFC0sx/exec" target="_blank" class="w3-bar-item w3-button">ETC กลุ่มด่านบางแก้ว</a>
+      <a href="https://script.google.com/macros/s/AKfycbwfSNdf6-Qhp-UASaERNnte8tqt9CtMAUEjInM4nGp03AS2z_lvjg9Z/exec" target="_blank" class="w3-bar-item w3-button">ETC กลุ่มด่านเทพารักษ์</a>
+	  <a href="https://script.google.com/macros/s/AKfycbz37FWFB90SHkdydp7tnWWBoDA8TNVy9_kr3kxJckocRhooOwvMCjHZVw-UouxCH0olKw/exec" target="_blank" class="w3-bar-item w3-button">ETC กลุ่มด่านบางเมือง</a>
+	  <a href="https://script.google.com/macros/s/AKfycbzcKF8SZV2ORsreA017op35tYfwfn8_9yxv9gyUeURujpIarJxaxNsh/exec" target="_blank" class="w3-bar-item w3-button">ETC กลุ่มด่านปู่เจ้าสมิงพราย+ปากน้ำ</a>
+	  <a href="https://script.google.com/macros/s/AKfycbxx-gM0uUkFrpIjtu7R71s9R2kVrBeADik_t44MPql9QgWYdWvMgJNh/exec" target="_blank" class="w3-bar-item w3-button">ETC กลุ่มด่านบางครุ</a>
+	  <a href="https://script.google.com/macros/s/AKfycbxFest9KvxENSN2GrmsO7ssktZVFEEp7ZsEyUAJTAEl1SM7Gnckoceb/exec" target="_blank" class="w3-bar-item w3-button">ETC กลุ่มด่านบางขุนเทียน</a>
+	  <a href="https://docs.google.com/spreadsheets/d/1Z2p-AJ5KEB5o96FVg7x4PQLSv_ME8nyCdyfmDwWsTzc/edit?usp=sharing" target="_blank" class="w3-bar-item w3-button">เข้าไปดูสถานะการรายงานที่ sheet 4</a>
+    </div>
+  </div>
+<div class="w3-dropdown-hover">
+    <button class="w3-button">รายงาน PM (ประจำเดือน)
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAFkFbrnMfFsNOTMefNrfL0hla7uvTxFlCpdsXyiRhiwPx0A/viewform" target="_blank" class="w3-bar-item w3-button">Pm Lane Entry + ATD</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPRUcadiHSz9rRMfq7PcBSPDW6S2AFwYMA4KdDyTgCnLH6eA/viewform" target="_blank" class="w3-bar-item w3-button">Pm Lane Exit</a>
+	  <a href="https://docs.google.com/forms/d/e/1FAIpQLScRS2O38-2CSzD_pDAv_TYDZitfEvgIO4IQrLxFc7Twx5qgcg/viewform" target="_blank" class="w3-bar-item w3-button">Pm Plaza</a>
+		 </div>
+  </div>
+	  
+    <a href="https://forms.gle/EugXmByWbikSCpwu7" target="_blank" class="w3-bar-item w3-button w3-padding"><i class="fa fa-spinner fa-fw"></i> รายงานสถานะระบบ MTC/ETC</a>
+    <a href="https://forms.gle/zmqUaR69LHpgafXc6" target="_blank" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  รายงานสรุปประจำวัน ช่าง6 และช่างผู้เข้าเวร</a>
+     <a href="./profile.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings/Logout</a><br><br>
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> &nbsp;Equipment2 Dashboard</b></h5>
+	  
+<SCRIPT TYPE="text/javascript">  
+<!--  
+//สคริปห้ามคลิ้กขวา By www.phpthai.com  
+  
+var message="ห้ามคลิ้กขวานะจ๊ะ";  
+  
+function clickIE() {if (document.all) {(message);return false;}}  
+function clickNS(e) {if  
+(document.layers||(document.getElementById&&!document.all)) {  
+if (e.which==2||e.which==3) {(message);return false;}}}  
+if (document.layers)  
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}  
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}  
+document.oncontextmenu=new Function("return false")  
+// -->  
+</SCRIPT>
+	  
+  </header>
+  <img src="../images/pic1.jpg" width ="858" height="482" alt=""/>  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>FOOTER</h4>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
+
+  <!-- End page content -->
 </div>
 
 <script>
-var video = document.getElementById("myVideo");
-var btn = document.getElementById("myBtn");
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
 
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
   } else {
-    video.pause();
-    btn.innerHTML = "Play";
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
   }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
 }
 </script>
 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+   <!-- Firebase -->
+    
+<script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+	apiKey: "AIzaSyC2HgriocCELYqFHqelFORL07hKDjCziKk",
+    authDomain: "equipment2auth.firebaseapp.com",
+    databaseURL: "https://equipment2auth-default-rtdb.firebaseio.com",
+    projectId: "equipment2auth",
+    storageBucket: "equipment2auth.appspot.com",
+    messagingSenderId: "566374600983"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+    
+    <!-- Custom JavaScript -->
+<script src="../js/app1.js"></script>
+
+	
 </body>
 </html>
